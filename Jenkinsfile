@@ -11,11 +11,12 @@ pipeline {
                 echo 'Building or Resolve Dependencies!'
                 sh 'bundle install'
             }
-        }
+        }       
         stage('Test') {
             steps {
                 echo 'Running regression tests'
-            }
+                sh 'cucumber -p ci'
+            }   
         }
         stage('UAT') {
             steps {
