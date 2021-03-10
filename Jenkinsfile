@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Running regression tests'
                 sh 'cucumber -p ci'
+                
             }   
         }
         stage('UAT') {
